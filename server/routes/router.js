@@ -33,7 +33,17 @@ router.post('/', (req, res) => {
     .catch(err => res.sendStatus(500))
 });
 
-
+router.put('/', (req, res) => {
+  console.log('in PUT all server');
+  let queryText = `
+  UPDATE item_list
+	SET "purchased" = false;
+  `;
+  pool 
+    .query(queryText)
+    .then(result => res.sendStatus(200))
+    .catch(err => res.sendStatus(500))    
+});
 
 
 module.exports = router;

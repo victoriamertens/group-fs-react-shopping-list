@@ -33,7 +33,8 @@ function App() {
             <Header />
             <AddItem 
                 fetchItems={fetchItems}/>
-            <ShoppingList />
+            <ShoppingList 
+              fetchItems = {fetchItems}/>
             <main>
               
                 <p>Under Construction...</p>

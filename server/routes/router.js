@@ -3,16 +3,17 @@ let router = express.Router();
 
 let pool = require('../modules/pool.js');
 
-pool.get('/', (req, res) => {
+router.get('/', (req, res) => {
   console.log('in get server');
   let queryText = `
   SELECT * 
-  FROM 'item-list'
+  FROM "item_list";
   `;
-  req
+  pool
     .query(queryText)
-    .then((result) => res.send(result))
+    .then((result) => res.send(result.rows))
     .catch((error) => {
       res.sendStatus(500);
     });
 });
+module.exports = router;

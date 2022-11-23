@@ -25,9 +25,9 @@ function ItemCard(props) {
 
   return (
     <div>
-      <p>Name:{props.name}</p>
+      <p>Name:{props.item.name}</p>
       <p>
-        Quantity: {props.quantity}, Unit{props.unit}
+        Quantity: {props.item.quantity}, Unit{props.item.unit}
       </p>
       <button onClick={purchaseBtn}>BUY</button>
       <button onClick={deleteCard}>REMOVE</button>

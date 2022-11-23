@@ -13,7 +13,7 @@ const fetchItems = () => {                      //INVOKED BY: (useEffect)
     axios.get('/item')
       .then(response => {
         console.log(response.data);
-        setItemList(response.data);
+        // setItemList(response.data);
       }).catch(error => {
         console.log(error);
       })
@@ -27,9 +27,11 @@ function App() {
     return (
         <div className="App">
             <Header />
+            <AddItem 
+                fetchItems={fetchItems}/>
             <ShoppingList />
             <main>
-              {/* <AddItem/>   */}
+              
                 <p>Under Construction...</p>
             </main>
         </div>

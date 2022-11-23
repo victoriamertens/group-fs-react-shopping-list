@@ -5,9 +5,7 @@ import './App.css';
 import axios from 'axios';
 
 
-useEffect(() => {
-    fetchItems();
-  }, [])
+
 
 
 const fetchItems = () => {                      //INVOKED BY: (useEffect)
@@ -18,6 +16,9 @@ const fetchItems = () => {                      //INVOKED BY: (useEffect)
       }).catch(error => {
         console.log(error);
       })
+    useEffect(() => {
+        fetchItems();
+    }, [])
   }                                             //INVOKES: (GET)(setItemList)
 
 

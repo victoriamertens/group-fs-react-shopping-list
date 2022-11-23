@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Header from '../Header/Header.jsx'
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import './App.css';
 import axios from 'axios';
 
@@ -26,6 +27,7 @@ function App() {
     return (
         <div className="App">
             <Header />
+            <ShoppingList />
             <main>
                 <p>Under Construction...</p>
             </main>

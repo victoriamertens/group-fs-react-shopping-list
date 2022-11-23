@@ -1,4 +1,5 @@
 import ItemCard from "../ItemCard/ItemCard";
+import ListHeader from "../ListHeader/ListHeader";
 
 
 
@@ -7,6 +8,10 @@ function ShoppingList(props){
 
     return(
         <>
+            <div>
+                <ListHeader
+                    fetchItems = {props.fetchItems}/>
+            </div>
             {
                 props.itemList.map(item => {
                     return(

@@ -16,4 +16,24 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+router.post('/', (req, res) => {
+  console.log('in POST');
+  let item = req.body;
+  console.log(item.name);
+  let queryText = `
+  INSERT INTO item_list 
+    ("name", "quantity", "unit")
+  VALUES
+      ($1, $2, $3);
+  `;
+  pool
+    .query(queryText, [item.name, item.quantity, item.unit])
+    .then(result => res.sendStatus(200))
+    .catch(err => res.sendStatus(500))
+});
+
+
+
+
 module.exports = router;

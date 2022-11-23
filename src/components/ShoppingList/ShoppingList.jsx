@@ -1,5 +1,4 @@
-import axios from "axios";
-import App from "../App/App";
+import ItemCard from "../ItemCard/ItemCard";
 
 
 
@@ -9,10 +8,11 @@ function ShoppingList(props){
     return(
         <>
             {
-                props.items.map(item => {
+                props.itemList.map(item => {
+                    return(
                     <ItemCard 
                         key = {item.id}
-                        item = {item}/>
+                        item = {item}/>)
                 })
             }
         </>

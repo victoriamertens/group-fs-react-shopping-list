@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { application } = require('express');
-const itemRouter = require('../routes/router.js')
+const itemRouter = require('./routes/router.js')
 const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/

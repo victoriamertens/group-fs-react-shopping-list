@@ -27,7 +27,7 @@ function AddItem({fetchItems}) {
             setNewQuantity('');
             setNewUnit('');
             //TODO call
-            //fetchItems();
+            fetchItems();
             
 
         })

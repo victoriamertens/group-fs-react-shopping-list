@@ -9,21 +9,25 @@ import AddItem from '../AddItem/AddItem.js';
 
 
 
-const fetchItems = () => {                      //INVOKED BY: (useEffect)
-    axios.get('/item')
-      .then(response => {
-        console.log(response.data);
-        // setItemList(response.data);
-      }).catch(error => {
-        console.log(error);
-      })
-    useEffect(() => {
-        fetchItems();
-    }, [])
-  }                                             //INVOKES: (GET)(setItemList)
+                            //INVOKES: (GET)(setItemList)
 
 
 function App() {
+    const fetchItems = () => {                      //INVOKED BY: (useEffect)
+        axios.get('/item')
+          .then(response => {
+            console.log(response.data);
+            // setItemList(response.data);
+          }).catch(error => {
+            console.log(error);
+          })
+        
+      }       
+
+    useEffect(() => {
+        fetchItems();
+    }, [])
+    
     return (
         <div className="App">
             <Header />

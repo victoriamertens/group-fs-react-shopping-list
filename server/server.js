@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const { application } = require('express');
+const itemRouter = require('../routes/router.js')
 const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -10,6 +12,8 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 // Create your API routes in a separate file
 // and plug them in here with `app.use()`
+
+app.use('/item', itemRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {

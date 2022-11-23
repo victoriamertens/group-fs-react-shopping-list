@@ -33,7 +33,28 @@ router.post('/', (req, res) => {
     .catch(err => res.sendStatus(500))
 });
 
+router.put('/', (req, res) => {
+  console.log('in PUT all server');
+  let queryText = `
+  UPDATE item_list
+	SET "purchased" = false;
+  `;
+  pool 
+    .query(queryText)
+    .then(result => res.sendStatus(200))
+    .catch(err => res.sendStatus(500))    
+});
 
 
+router.delete('/', (req, res) => {
+  console.log('in DELETE all server');
+  let queryText = `
+  DELETE FROM item_list;
+  `;
+  pool
+    .query(queryText)
+    .then(result => res.sendStatus(200))
+    .catch(err => res.sendStatus(500))
+});
 
 module.exports = router;

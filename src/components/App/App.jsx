@@ -4,40 +4,34 @@ import Header from '../Header/Header.jsx'
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import './App.css';
 import axios from 'axios';
+import AddItem from '../AddItem/AddItem.js';
 
 
 function App() {
 
 
-    let [itemList, setItemList] = useState([]);
 
-
+const fetchItems = () => {                      //INVOKED BY: (useEffect)
+    axios.get('/item')
+      .then(response => {
+        console.log(response.data);
+        setItemList(response.data);
+      }).catch(error => {
+        console.log(error);
+      })
     useEffect(() => {
         fetchItems();
     }, [])
+  }                                             //INVOKES: (GET)(setItemList)
 
 
-    
-
-
-    const fetchItems = () => {                      //INVOKED BY: (useEffect)
-        axios.get('/item')
-        .then(response => {
-            console.log(response.data);
-            setItemList(response.data);
-            console.log('itemlist is',itemList);
-        }).catch(error => {
-            console.log(error);
-        })
-        
-    }                                             //INVOKES: (GET)(setItemList)
-
-
+function App() {
     return (
         <div className="App">
             <Header />
-            <ShoppingList items={itemList}/>
+            <ShoppingList />
             <main>
+              
                 <p>Under Construction...</p>
             </main>
         </div>

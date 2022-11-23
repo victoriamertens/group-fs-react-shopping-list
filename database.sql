@@ -16,3 +16,6 @@ VALUES
     ('Peanuts', 1003),
     ('Pants', 1)
 ;
+
+ALTER TABLE "item_list"
+ADD "unit" VARCHAR(10);

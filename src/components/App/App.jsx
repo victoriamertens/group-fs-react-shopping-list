@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx'
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import './App.css';
 import axios from 'axios';
-
+import AddItem from '../AddItem/AddItem.js';
 
 
 
@@ -29,6 +29,7 @@ function App() {
             <Header />
             <ShoppingList />
             <main>
+              {/* <AddItem/>   */}
                 <p>Under Construction...</p>
             </main>
         </div>

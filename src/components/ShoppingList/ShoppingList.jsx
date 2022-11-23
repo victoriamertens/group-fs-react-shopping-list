@@ -1,21 +1,41 @@
 import axios from "axios";
 import App from "../App/App";
+import ItemCard from "../ItemCard/ItemCard";
 
 
 
-function ShoppingList(){
-    console.log('in shoppingList');
+function ShoppingList(props){
 
-    return(
-        <>
+
+    console.log('in shoppingList',props.items);
+
+    return (
+
         <div>
-            <p>Shopping List Header will go here!</p>
+            {props.items.map((item) => (
+                <ItemCard
+                    key={item.id}
+                    item={item}/>
+            ))
+
+
+            }
+
+
         </div>
-        <div>
-            <p>Item Cards will go here!</p>
-        </div>
-        </>
+
     )
+
+   
+    
+
+
+
+
+
+
+
+
 }
 
 export default ShoppingList;

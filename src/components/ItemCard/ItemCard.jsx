@@ -1,9 +1,18 @@
 function ItemCard(props) {
+
+  
+
+
+
+
+
+
+  console.log(props);
   return (
     <div>
-      <p>Name:{props.name}</p>
+      <p>Name:{props.item.name}</p>
       <p>
-        Quantity: {props.quantity}, Unit{props.unit}
+        Quantity: {props.item.quantity}, Unit {props.item.unit}
       </p>
       <button>BUY</button>
       <button>REMOVE</button>

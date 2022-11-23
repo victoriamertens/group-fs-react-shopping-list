@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import axios from 'axios';
-
+import AddItem from '../AddItem/AddItem.js';
 
 useEffect(() => {
     fetchItems();
@@ -26,6 +26,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+              {/* <AddItem/>   */}
                 <p>Under Construction...</p>
             </main>
         </div>
